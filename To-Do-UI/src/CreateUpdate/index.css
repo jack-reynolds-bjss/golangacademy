@@ -1,0 +1,22 @@
+.create-edit-todo {
+    padding: 2rem;
+}
+
+.todo-form {
+    padding: 2rem;
+}
+
+.item-container {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.status-container {
+    width: 100%;
+}
+
+.save-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}

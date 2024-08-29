@@ -1,0 +1,33 @@
+.app {
+  padding: 2rem;
+}
+
+.action-bar {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo {
+  padding: 10px;
+  display: grid;
+  row-gap: 5px;
+  align-items: center;
+  grid-template-areas: 'status item delete-container';
+  grid-auto-columns: 10% 80% 10%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(219, 219, 219);
+  }
+}
+
+.status {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.delete-container {
+  display: flex;
+  justify-content: flex-end;
+}
