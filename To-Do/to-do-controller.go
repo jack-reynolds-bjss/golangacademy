@@ -23,9 +23,9 @@ func createTodoItemHandler(w http.ResponseWriter, req *http.Request) {
     return
   }
 
-	fmt.Println(todo)
+  fmt.Println(todo)
 
-	CreateTodoItem(todo.Item, todo.Status)
+  CreateTodoItem(todo.Item, todo.Status)
 }
 
 func updateTodoItemHandler(w http.ResponseWriter, req *http.Request) {
