@@ -40,9 +40,9 @@ func (todo *ToDo) GetStatus() string {
 	}
 }
 
-func GetTodoItems() []byte {
+func getTodoItems() []byte {
 	var todos []ToDo
-	
+
 	rows, err := db.Query("SELECT * FROM todo")
 	check(err, "Failed to get Todos from DB")
 	defer rows.Close()
@@ -58,7 +58,7 @@ func GetTodoItems() []byte {
 	return js
 } 
 
-func GetTodoItem(id string) []byte {
+func getTodoItem(id string) []byte {
     var todo ToDo
 
     row := db.QueryRow("SELECT * FROM todo WHERE id = ?", id)
@@ -78,7 +78,7 @@ func GetTodoItem(id string) []byte {
 	return js
 }
 
-func CreateTodoItem(item string, status ToDoStatus) uuid.UUID {
+func createTodoItem(item string, status ToDoStatus) uuid.UUID {
 	// todos := ReadJSON(fileName)
 	// newTodos := append(todos, ToDo{ Id: uuid.New(), Item: item, Status: status })
 	// WriteJson(fileName, ConvertTodosToJson(newTodos...))
@@ -88,7 +88,7 @@ func CreateTodoItem(item string, status ToDoStatus) uuid.UUID {
 	return id
 }
 
-func DeleteTodoItem(id string) {
+func deleteTodoItem(id string) {
 	// todos := ReadJSON(fileName)
 	// for i, val := range todos {
 	// 	uuid, err := uuid.Parse(id)
@@ -102,7 +102,7 @@ func DeleteTodoItem(id string) {
     check(err, fmt.Sprintf("Failed to delete todo with id = %s", id))
 }
 
-func UpdateTodoItem(todo ToDo) {
+func updateTodoItem(todo ToDo) {
 	// todos := ReadJSON(fileName)
 	// for i, val := range todos {
 	// 	if (val.Id == todo.Id) {

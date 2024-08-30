@@ -7,11 +7,11 @@ import (
 )
 
 func getTodoItemsHandler() []byte {
-	return GetTodoItems()
+	return getTodoItems()
 }
 
 func getTodoItemHandler(id string) []byte {
-	return GetTodoItem(id)
+	return getTodoItem(id)
 }
 
 func createTodoItemHandler(w http.ResponseWriter, req *http.Request) {
@@ -25,7 +25,7 @@ func createTodoItemHandler(w http.ResponseWriter, req *http.Request) {
 
   fmt.Println(todo)
 
-  CreateTodoItem(todo.Item, todo.Status)
+  createTodoItem(todo.Item, todo.Status)
 }
 
 func updateTodoItemHandler(w http.ResponseWriter, req *http.Request) {
@@ -37,11 +37,11 @@ func updateTodoItemHandler(w http.ResponseWriter, req *http.Request) {
     return
   }
 
-	UpdateTodoItem(todo)
+	updateTodoItem(todo)
 }
 
 func deleteTodoItemHandler(id string) {
-	DeleteTodoItem(id)
+	deleteTodoItem(id)
 }
 
 func todoItemsHandler(w http.ResponseWriter, req *http.Request) {
