@@ -49,6 +49,7 @@ var port int = 8090
 
 // func raceCondition(todoItems []ToDo) {
 // 	ch := make(chan string, len(todoItems) * 2)
+// 	defer close(ch)
 
 // 	for _,val := range todoItems {
 // 		wg.Add(1)
