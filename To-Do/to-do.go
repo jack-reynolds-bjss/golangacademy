@@ -42,6 +42,7 @@ func (todo *ToDo) GetStatus() string {
 
 func GetTodoItems() []byte {
 	var todos []ToDo
+	
 	rows, err := db.Query("SELECT * FROM todo")
 	check(err, "Failed to get Todos from DB")
 	defer rows.Close()
@@ -59,8 +60,6 @@ func GetTodoItems() []byte {
 
 func GetTodoItem(id string) []byte {
     var todo ToDo
-
-	fmt.Println(id)
 
     row := db.QueryRow("SELECT * FROM todo WHERE id = ?", id)
 	err := row.Scan(&todo.Id, &todo.Item, &todo.Status)
